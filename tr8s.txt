@@ -1,0 +1,133 @@
+############# POLY Example 1 #############
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME TR8S
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE DRUM
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NONE
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN ALL
+
+# PC
+# Syntax  NUMBER NAME
+# number must be either 
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ' ', which represent PC MSB LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+8:NULL:NULL:36 BD
+7:NULL:NULL:38 SD
+6:NULL:NULL:43 LT
+5:NULL:NULL:47 MT
+4:NULL:NULL:50 HT
+3:NULL:NULL:37 RS
+2:NULL:NULL:39 HC
+1:NULL:NULL:42 CH
+# 1:NULL:NULL:46 OH
+# 1:NULL:NULL:49 CC
+# 1:NULL:NULL:51 RC 
+
+# 8:NULL:NULL:35 BD ALT
+# 7:NULL:NULL:40 SD ALT
+# 6:NULL:NULL:41 LT ALT
+# 5:NULL:NULL:45 MT ALT
+# 4:NULL:NULL:48 HT ALT
+# 3:NULL:NULL:56 RS ALT
+# 2:NULL:NULL:54 HC ALT
+# 1:NULL:NULL:44 CH ALT
+# 1:NULL:NULL:58 OH ALT
+# 1:NULL:NULL:61 CC ALT
+# 1:NULL:NULL:63 RC ALT
+[/DRUMLANES]
+
+# CC
+# Syntax  CC_NUMBER NAME or CC_NUMBER DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+9 SHUFFLE
+12 EXTIN LEVEL
+14 AFILL ON
+15 MFX ON
+16 DLY LEVEL
+17 DLY TIME
+18 DLY FDBK
+19 MFX CTRL
+20 BD TNE
+23 BD DCY
+24 BD LVL
+25 SD TN
+28 SD DCY
+29 SD LVL
+46 LT TN
+47 LT DCY
+48 LT LVL
+49 MT TN
+50 MT DCY
+51 MT LVL
+52 HT TN
+53 HT DCY
+54 HT LVL
+55 RS TN
+56 RS DCY
+57 RS LVL
+58 HC TN
+59 HC DCY
+60 HC LVL
+61 CH TN
+62 CH DCY
+63 CH LVL
+70 AFILLTG
+71 ACCENT
+80 OH TN
+81 OH DCY
+82 OH LVL
+83 CC TN
+84 CC DCY
+85 CC LVL
+86 RC TN
+87 RC DCY
+88 RC LVL
+91 REV LVL
+96 BD CTL
+97 SD CTL
+102 LT CTL
+103 MT CTL
+104 HT CTL
+105 RS CTL
+106 HC CTL
+107 CH CTL
+108 OH CTL
+109 CC CTL
+110 RC CTL
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Notes may be modified on the TR8S, these are according to the manual.
+[/COMMENT]
