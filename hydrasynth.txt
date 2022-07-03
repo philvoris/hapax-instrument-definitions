@@ -1,0 +1,161 @@
+############# POLY Example 1 #############
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME Hydrasynth
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE MPE
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NONE
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN ALL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+00 Bank select MSB 
+01 Modulation wheel 
+03 Noise Vol 
+05 GlidTime
+07 Master Volume 
+08 Noise Pan 
+09 Ring Mod Vol
+10 Ring Mod Pan 
+11 Expression pedal 
+12 PRE-FX Param1 
+13 PRE-FX Param2 
+14 Delay Feedback
+15 Delay Time 
+16 Macro 1
+17 Macro 2
+18 Macro 3
+19 Macro 4
+20 Macro 5
+21 Macro 6
+22 Macro 7
+23 Macro 8
+24 OSC1 wavscan 
+25 ENV4 Attack 
+26 OSC2 WavScan 
+27 ENV4 Decay 
+28 LFO2 Gain 
+29 Mutator1 Ratio 
+30 Mutator1 Depth 
+31 Mutator1 Dry/Wet 
+32 Bank select LSB 
+33 Mutator2 Ratio 
+34 Mutator2 Depth 
+35 Mutator2 Dry/Wet 
+36 Mutator3 Ratio 
+37 Mutator3 Depth 
+39 Mutator3 Dry/Wet 
+40 Mutator4 Ratio 
+41 Mutator4 Depth 
+42 Mutator4 Dry/Wet 
+43 RM12 Depth 
+44 OSC1 Vol 
+45 OSC1 Pan 
+46 OSC2 Vol 
+47 OSC2 Pan 
+48 OSC3 Vol 
+49 OSC3 Pan 
+50 Filter1 Drive 
+51 Filter1 Keytrack 
+52 Filter1 LFO1amt 
+53 Filter1 Vel Env 
+54 Filter1 ENV1amt 
+55 Flt2 Cutoff 
+56 Flt2 Res 
+57 Flt2 Type 
+58 Filter2 Keytrack 
+59 Filter2 LFO1amt 
+60 Filter2 Vel Env 
+61 Filter2 ENV1amt 
+62 Amp LFO2amt 
+63 Delay Wet tone 
+64 Sustain pedal 
+65 Reverb Time 
+66 Glide 
+67 Reverb Tone 
+68 POST-FX Param1 
+69 POST-FX Param2 
+70 LFO1 Gain 
+71 Filter1 Res 
+72 LFO1 Rate 
+73 LFO2 Rate 
+74 Filter1 Cutoff 
+75 LFO3 Gain 
+76 LFO3 Rate 
+77 LFO4 Gain 
+78 LFO4 Rate 
+79 LFO5 Gain 
+80 LFO5 Rate 
+81 ENV1 Attack 
+82 ENV1 Decay 
+83 ENV1 Sustain 
+84 ENV1 Release 
+85 ENV2 Attack 
+86 ENV2 Decay 
+87 ENV2 Sustain 
+88 ENV2 Release 
+89 ENV3 Attack 
+90 ENV3 Decay 
+91 Reverb Dry/Wet 
+92 Delay Dry/Wet 
+93 PRE-FX Mix 
+94 POST FX Mix 
+95 Detune 
+96 ENV3 Sustain 
+97 ENV3 Release 
+102 ENV5 Attack 
+103 ENV5 Decay 
+104 ENV5 Sustain 
+105 ENV5 Release 
+106 ARP Division 
+107 ARP Gate 
+108 ARP Mode 
+109 ARP Ratchet 
+110 ARP Chance 
+111 OSC1 Cent 
+112 OSC2 Cent 
+113 OSC3 Cent
+114 OSC3 FRate
+115 Noise FRate
+116 RM12 FRate
+117 StWidth
+118 OSC1 FRate 
+119 OSC2 FRate
+120 ARP Octave
+122 ARP Length
+123 All notes off
+124 ENV4 Release
+125 ENV4 Sustain
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+MPE mode
+[/COMMENT]
