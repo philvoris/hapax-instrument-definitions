@@ -1,0 +1,134 @@
+############# POLY Example 1 #############
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME TYPHON
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT C
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN 4
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT ALLACTIVE
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN ALL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:0:NULL
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 MODWHL
+2 CC2
+3 RES
+4 CUTOFF
+5 WAVE
+6 O2TUNE
+7 GLIDE
+8 O LVL
+9 F TRK
+11 FFMAMT
+12 HPCUT
+13 HPRES
+14 FX1P1
+15 FX1P2
+16 FX1MIX
+17 FX2P1
+18 FX2P2
+19 FX2P3
+20 FX2P4
+21 FX2MIX
+22 FX3P1
+23 FX3P2
+24 FX3P3
+25 FX3P4
+26 FX3MIX
+27 F EG A
+28 F EG D
+29 F EG S
+30 F EG R
+31 F EG T
+33 F EG L
+34 A EG A
+35 A EG D
+36 A EG S
+37 A EG R
+38 A EG T
+40 M1P1
+41 M1P2
+42 M1P3
+43 M1CVL
+44 M1CV1L
+45 M1CV2L
+46 M1WAVL
+47 M1CUTL
+48 M1 A L
+49 M1FX1L
+50 M1FFML
+51 M1FX2L
+52 M1FX3L
+53 M1C1L
+54 M1C2L
+55 M1C3L
+56 M2P1
+57 M2P2
+58 M2P3
+59 M2CVL
+60 M2CV1L
+61 M2CV2L
+62 M2WAVL
+63 M2CUTL
+65 M2 A L
+66 M2FX1L
+67 M2FFML
+68 M2FX2L
+69 M2FX3L
+70 M2C1L
+71 M2C2L
+72 M2C3L
+73 M3P1
+74 M3P2
+75 M3P3
+76 M3CVL
+77 M3CV1L
+78 M3CV2L
+79 M3WAVL
+80 M3CUTL
+81 M3 A L
+82 M3FX1L
+83 M3FFML
+84 M3FX2L
+85 M3FX3L
+86 M3C1L
+87 M3C2L
+88 M3C3L
+89 SEQL
+90 SEQDIV
+91 SEQPROB
+92 SEQSWG
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Dreadbox Typhon
+[/COMMENT]
