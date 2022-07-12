@@ -1,0 +1,100 @@
+
+VERSION 1 # Currently, this should only be 1.
+
+TRACKNAME OB-6
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT A
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN 13
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NONE
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN ALL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:1:NULL BANKB_PATCH2 #for the blofeld, MSB sets the bank, PC sets the patch
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+0 BkSelMSB
+1 ModWheel
+3 BPM
+4 FootCtr
+5 PortTime
+6 DtEntMSB
+7 MIDIvol
+8 SbOctLvl
+9 DstortAm
+38 DtEntLSB
+39 VolumLSB
+40 VCAEnvAm
+41 VCAEnVel
+43 VCAEnvAt
+44 VCAEnvDe
+45 VCAEnvSu
+46 VCAEnvRe
+47 FtrEnvAm
+50 FtrEnvAt
+51 FtrEnvDe
+52 FtrEnvSu
+53 FtrEnvRe
+58 ArpOnOff
+59 ArpMode
+60 ArpOctav
+62 ArpClDiv
+64 DamprPed
+65 PmtoOnOf
+67 Osc1Freq
+69 Osc1Levl
+70 Osc1Shap
+71 Osc1PW
+74 Brigtnes
+75 Osc2Freq
+76 Osc2Detn
+77 Osc2Levl
+78 Osc2Shap
+79 Osc2PW
+96 DataIncr
+97 DataDecr
+98 NRPNPLSB
+99 NRPNPMSB
+100 RPNPLSB
+101 RPNPMSB
+102 FiltrFrq
+103 FiltrRes
+104 FtrKeyAm
+105 FtVlOnOf
+106 FltrMode
+107 BP OnOff
+120 AlSendOf
+121 ResetCon
+122 LcCnOnOf
+123 AlNotsOf
+124 OmiMdeOf
+125 OmiMdeOn
+126 MonMdeOn
+127 PlyMdeOn
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+BETA by Phil 20220711
+[/COMMENT]
