@@ -1,0 +1,107 @@
+# Basic MFB Tanzbar MIDI CCs for Channel 10
+# Phil Voris
+
+VERSION 1
+
+TRACKNAME Tanzbar CC
+
+TYPE NULL
+
+OUTPORT A
+
+OUTCHAN 10
+
+INPORT NONE
+
+INCHAN NULL
+
+# PC
+# Syntax  NUMBER NAME
+# number must be either 
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ' ', which represent PC MSB LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+# [PC]
+# 1 INIT
+# 1 1 NULL B01
+# [/PC]
+
+# CC
+# Syntax  CC_NUMBER NAME or CC_NUMBER DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+2 BD1_Attack
+64 BD1_Decay
+65 BD1_Pitch
+3 BD1_Tune
+4 BD1_Noise
+5 BD1_Filter
+6 BD1_Dist
+66 BD1_Trigger
+8 BD2_Decay
+9 BD2_Tune
+10 BD2_Tone
+11 SD_Tune
+12 SD_D-Tune
+13 SD_Snappy
+67 SD_SN_Decay
+14 SD_Tone
+68 SD_ToneDecay
+69 SD_Pitch
+88 RS_Tune
+70 CY_Decay
+15 CY_Tone
+71 CY_Tune
+72 OH_Decay
+73 HH_Tune
+74 HH_Decay
+16 CL_Tune
+17 CL_Decay
+75 CP_Decay
+18 CP_Filter
+76 CP_Attack
+77 CP_Trigger
+19 HTC_Tune
+20 HTC_Decay
+78 HTC_NoiseOnOff
+79 HTC_TomConga
+21 MTC_Tune
+22 MTC_Decay
+80 MTC_NoiseOnOff
+81 MTC_TomConga
+23 LTC_Tune
+24 LTC_Decay
+82 LTC_NoiseOnOff
+83 LTC_TomConga
+84 Tom_Noise
+85 CB_Tune
+86 CB_Decay
+87 MA_Decay
+0 SetSelect
+89 CV1_TDelay
+90 CV23_TDelay
+91 BD1_TDelay
+92 BD2_TDelay
+93 SD_TDelay
+94 RS_TDelay
+95 CY_TDelay
+96 OH_TDelay
+97 HH_TDelay
+98 CL_TDelay
+99 CP_TDelay
+100 TLC_TDelay
+101 MTC_TDelay
+102 HTC_TDelay
+103 CB_TDelay
+104 MA_TDelay
+[/CC]
+
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+BETA by Phil 20220711
+[/COMMENT]
+
+
