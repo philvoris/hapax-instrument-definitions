@@ -1,0 +1,42 @@
+VERSION 1 # Currently, this should only be 1.
+
+TRACKNAME Per4mer MKII
+
+TYPE POLY
+
+OUTPORT A 
+OUTCHAN NULL
+INPORT NONE
+INCHAN ALL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:1:NULL BANKB_PATCH2 #for the blofeld, MSB sets the bank, PC sets the patch
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 MOD_WHEEL
+3 MOD_RATE
+4 AFTERTOUCH
+5 PORT_TIME
+7 VOLUME
+65 PORT_ONOFF
+68 LEGATO
+84 PORT_MOD
+
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+BETA by Phil 20220711
+[/COMMENT]
